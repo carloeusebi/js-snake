@@ -1,0 +1,103 @@
+body {
+    background-color: #ced4da;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 800px;
+    height: 75px;
+    margin: 20px auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+header>* {
+    width: calc(100% /3);
+    text-align: center;
+}
+
+#select-player {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    outline: none;
+}
+
+#playarea {
+    border: 2px solid black;
+    height: 800px;
+    width: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+    overflow: hidden;
+}
+
+.pixel {
+    width: 2%;
+    height: 2%;
+    overflow: visible;
+    position: relative;
+}
+
+.pixel.snake {
+    background-color: red;
+}
+
+.pixel.food {
+    background-color: green;
+}
+
+img {
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.blink {
+    animation: blink-animation 1.5s ease-in-out infinite;
+}
+
+.scale {
+    animation: scale-animation 3s ease-in-out infinite;
+}
+
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-animation {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.05;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
